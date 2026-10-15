@@ -1,0 +1,9 @@
+---
+description: Reglas del proyecto parking-turnos
+alwaysApply: true
+---
+- Backend: Node.js 22, ESM, AWS SDK v3. Un solo handler Lambda (payload HTTP API v2).
+- El mismo código corre en local (Express + DynamoDB Local + MinIO) y en AWS; solo cambian variables de entorno.
+- Frontend: HTML/CSS/JS vanilla, sin frameworks ni build.
+- La hora de los registros siempre la genera el servidor, en zona America/Bogota.
+- Código, comentarios y mensajes en español. Funciones pequeñas y simples.

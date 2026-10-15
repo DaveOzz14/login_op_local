@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Registro de turno</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <main class="app">
+    <header class="cabecera">
+      <h1 id="pq-nombre">Cargando…</h1>
+      <p id="pq-detalle"></p>
+      <p id="reloj" class="reloj"></p>
+    </header>
+
+    <section id="vista-error" class="tarjeta" hidden>
+      <h2>⚠️ No es posible registrar</h2>
+      <p id="error-texto"></p>
+    </section>
+
+    <section id="vista-cedula" class="tarjeta" hidden>
+      <form id="form-cedula" novalidate>
+        <label for="cedula">Número de cédula</label>
+        <input id="cedula" inputmode="numeric" autocomplete="off" maxlength="13" placeholder="Ej: 1023456789">
+        <label class="check">
+          <input type="checkbox" id="acepto">
+          Autorizo el tratamiento de mis datos personales (cédula y fotografía) para el control de turnos, conforme a la Ley 1581 de 2012.
+        </label>
+        <p id="cedula-error" class="error" aria-live="polite"></p>
+        <button type="submit" class="btn">Continuar</button>
+      </form>
+    </section>
+
+    <section id="vista-foto" class="tarjeta" hidden>
+      <p id="accion-texto" class="accion"></p>
+      <p id="accion-detalle" class="detalle"></p>
+      <div class="camara">
+        <video id="video" autoplay playsinline muted></video>
+        <img id="foto-previa" alt="Foto tomada" hidden>
+      </div>
+      <p id="foto-error" class="error" aria-live="polite"></p>
+      <div class="botones">
+        <button id="btn-tomar" class="btn">📷 Tomar foto</button>
+        <button id="btn-repetir" class="btn btn-sec" hidden>Repetir</button>
+        <button id="btn-confirmar" class="btn" hidden>Confirmar</button>
+      </div>
+      <button id="btn-cancelar" class="btn-link">Cancelar</button>
+    </section>
+
+    <section id="vista-resultado" class="tarjeta" hidden>
+      <h2 id="resultado-titulo"></h2>
+      <p id="resultado-detalle"></p>
+      <button id="btn-nuevo" class="btn">Nuevo registro</button>
+    </section>
+  </main>
+  <script type="module" src="js/app.js"></script>
+</body>
+</html>

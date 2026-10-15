@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Administración de turnos</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <script src="https://cdn.sheetjs.com/xlsx-0.20.3/package/dist/xlsx.full.min.js" defer></script>
+</head>
+<body>
+  <main class="app app-admin">
+    <header class="cabecera">
+      <h1>Administración de turnos</h1>
+    </header>
+
+    <section id="vista-login" class="tarjeta tarjeta-angosta">
+      <form id="form-login">
+        <label for="password">Contraseña</label>
+        <input id="password" type="password" class="campo" autocomplete="current-password" required>
+        <p id="login-error" class="error" aria-live="polite"></p>
+        <button class="btn">Ingresar</button>
+      </form>
+    </section>
+
+    <section id="vista-panel" hidden>
+      <form id="form-filtros" class="tarjeta filtros">
+        <div><label for="desde">Desde</label><input id="desde" type="date" class="campo" required></div>
+        <div><label for="hasta">Hasta</label><input id="hasta" type="date" class="campo" required></div>
+        <div><label for="f-parqueadero">Parqueadero</label><input id="f-parqueadero" class="campo" placeholder="PQ-001"></div>
+        <div><label for="f-cedula">Cédula</label><input id="f-cedula" class="campo" inputmode="numeric" placeholder="Opcional"></div>
+        <div class="filtros-botones">
+          <button class="btn" id="btn-buscar">Buscar</button>
+          <button type="button" class="btn btn-sec" id="btn-exportar" disabled>Exportar Excel</button>
+          <button type="button" class="btn-link" id="btn-salir">Salir</button>
+        </div>
+      </form>
+
+      <p id="panel-error" class="error" aria-live="polite"></p>
+      <div id="resumen" class="resumen"></div>
+
+      <div class="tabla-contenedor tarjeta">
+        <table>
+          <thead>
+            <tr>
+              <th>Fecha y hora</th><th>Cédula</th><th>Tipo</th><th>Parqueadero</th>
+              <th>Punto</th><th>Estado sesión</th><th>Duración</th><th>Foto</th>
+            </tr>
+          </thead>
+          <tbody id="tabla-cuerpo"></tbody>
+        </table>
+      </div>
+    </section>
+
+    <dialog id="modal-foto">
+      <img id="foto-grande" alt="Foto del registro">
+      <p id="foto-info"></p>
+      <button class="btn" id="btn-cerrar-foto">Cerrar</button>
+    </dialog>
+  </main>
+  <script type="module" src="js/admin.js"></script>
+</body>
+</html>

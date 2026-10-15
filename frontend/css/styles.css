@@ -1,0 +1,57 @@
+:root {
+    --fondo: #f2f4f7; --tarjeta: #fff; --texto: #1d2939; --suave: #667085;
+    --primario: #1570ef; --login: #12b76a; --logout: #f79009; --error: #d92d20;
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; font-family: system-ui, sans-serif; background: var(--fondo); color: var(--texto); }
+  .app { max-width: 480px; margin: 0 auto; padding: 16px; }
+  .cabecera { text-align: center; margin-bottom: 16px; }
+  .cabecera h1 { font-size: 1.4rem; margin: 8px 0 4px; }
+  .cabecera p { margin: 0; color: var(--suave); }
+  .reloj { font-size: 1.1rem; font-weight: 600; margin-top: 6px !important; color: var(--texto) !important; }
+  .tarjeta { background: var(--tarjeta); border-radius: 12px; padding: 20px; box-shadow: 0 1px 3px rgba(0,0,0,.1); }
+  label { display: block; font-weight: 600; margin-bottom: 8px; }
+  input#cedula { width: 100%; font-size: 1.6rem; padding: 12px; border: 2px solid #d0d5dd; border-radius: 8px; letter-spacing: 2px; }
+  input#cedula:focus { outline: none; border-color: var(--primario); }
+  .check { display: flex; gap: 10px; font-weight: 400; font-size: .85rem; color: var(--suave); margin: 16px 0 0; }
+  .check input { width: 22px; height: 22px; flex-shrink: 0; }
+  .error { color: var(--error); min-height: 1.2em; font-size: .95rem; margin: 10px 0; }
+  .btn { width: 100%; padding: 16px; font-size: 1.1rem; font-weight: 600; border: 0; border-radius: 8px; background: var(--primario); color: #fff; cursor: pointer; }
+  .btn:disabled { opacity: .5; cursor: wait; }
+  .btn-sec { background: #475467; }
+  .btn-link { background: none; border: 0; color: var(--suave); width: 100%; margin-top: 12px; padding: 8px; font-size: 1rem; text-decoration: underline; cursor: pointer; }
+  .botones { display: grid; gap: 10px; }
+  .accion { text-align: center; font-size: 1.3rem; font-weight: 700; padding: 10px; border-radius: 8px; color: #fff; background: var(--primario); margin: 0 0 12px; }
+  .accion.login { background: var(--login); }
+  .accion.logout { background: var(--logout); }
+  .camara { aspect-ratio: 3 / 4; background: #000; border-radius: 8px; overflow: hidden; }
+  .camara video, .camara img { width: 100%; height: 100%; object-fit: cover; }
+  .camara video { transform: scaleX(-1); } /* efecto espejo solo en la vista previa */
+  #vista-resultado { text-align: center; }
+  #vista-error h2 { color: var(--error); }
+  .detalle { text-align: center; color: var(--suave); margin: -4px 0 12px; }
+
+
+  /* ---------- Administración ---------- */
+.app-admin { max-width: 1200px; }
+.tarjeta-angosta { max-width: 400px; margin: 0 auto; }
+.campo { width: 100%; padding: 10px; font-size: 1rem; border: 2px solid #d0d5dd; border-radius: 8px; }
+.filtros { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 12px; align-items: end; margin-bottom: 12px; }
+.filtros-botones { display: grid; gap: 8px; }
+.filtros-botones .btn { padding: 10px; font-size: 1rem; }
+.filtros-botones .btn-link { margin: 0; }
+.resumen { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 12px; }
+.resumen span { background: var(--tarjeta); border-radius: 8px; padding: 8px 12px; font-weight: 600; box-shadow: 0 1px 3px rgba(0,0,0,.1); }
+.tabla-contenedor { overflow-x: auto; padding: 0; }
+table { width: 100%; border-collapse: collapse; font-size: .9rem; }
+th, td { padding: 10px; text-align: left; border-bottom: 1px solid #eaecf0; white-space: nowrap; }
+th { background: #f9fafb; position: sticky; top: 0; }
+.etiqueta { padding: 2px 8px; border-radius: 10px; font-size: .8rem; font-weight: 700; color: #fff; }
+.etiqueta.LOGIN { background: var(--login); }
+.etiqueta.LOGOUT { background: var(--logout); }
+.estado-NO_CERRADA { color: var(--error); font-weight: 700; }
+.btn-mini { padding: 4px 10px; border: 1px solid #d0d5dd; background: #fff; border-radius: 6px; cursor: pointer; }
+dialog { border: 0; border-radius: 12px; padding: 16px; max-width: 420px; width: 90%; }
+dialog::backdrop { background: rgba(0,0,0,.6); }
+dialog img { width: 100%; border-radius: 8px; background: #000; min-height: 200px; }
+dialog p { text-align: center; color: var(--suave); }
